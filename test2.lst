@@ -1,0 +1,7 @@
+; This is to test emulator when program is written wrong
+; Here there is no HALT & thus the emulator will stop abruptly
+
+00000000 00000100 ldc 1 
+00000001 00000200 ldc 2 
+00000002 00000006 add 
+00000003 00000019 data 25 

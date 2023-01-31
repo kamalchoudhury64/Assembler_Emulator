@@ -1,0 +1,17 @@
+;test7.asm 
+; subtract 2 numbers from memory & store it somewhere else in memory (difference label)
+
+00000000 00000800 ldc arr  ; loading address of first number in A register
+00000001 00000004 ldnl 0   ; loading the first number in A register
+00000002 00000800 ldc arr  ; loading address of first number in A register & B register stores the first number
+00000003 00000104 ldnl 1   ; loading second number in A register
+00000004 00000007 sub	 ; A stores (B-A) (First number - second number)
+00000005 00000A00 ldc difference  ; Loading address in A where difference needs to be stored & B stores the difference
+00000006 00000005 stnl 0  ; Value of B is written in memory & difference of two numbers is stored in memory
+00000007 00000012 HALT	 ;Halting the program
+
+; data segment
+00000008 00000008 arr:	data	0x0008  ;first number
+00000009 00000001 	data	0x0001  ;second number 
+
+0000000A 00000000 difference: data 0x0000 
